@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Dasboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Dashboard</h1>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h2>Lista de Canciones</h2>
+            {% if songs %}
+            <ul class="list-group">
+                {% for song in songs %}
+                    <li class="list-group-item">
+                        <strong>{{ song.title }}</strong> - {{ song.author }} ({{ song.album }}) - Rating: {{song.rating}}/100
+                    </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No hay canciones disponibles</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

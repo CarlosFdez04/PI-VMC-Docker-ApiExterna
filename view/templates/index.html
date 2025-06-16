@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Página de Inicio{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Dashboard</h2>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ver Canciones</h5>
+                    <p class="card-text">Obtención de canciones desde mi base de datos siguiendo MVC, Factory, DAO y DTOs</p>
+                    <a href="/getsongs" class="btn btn-danger">Canciones</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Canciones por Artista</h5>
+                    <p class="card-text">Obtención las canciones de un artista ( Caso de uso de Spotify)</p>
+                    <form action="/search-songs-by-artist" method="GET">
+                        <input type="text" name="artist" id="artist" placeholder="Introduzca nombre de artista">
+                        <button type="submit" class="btn btn-success">Buscar en Spotify</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+{% endblock %}
