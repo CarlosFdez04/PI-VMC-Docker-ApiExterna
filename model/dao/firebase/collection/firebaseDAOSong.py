@@ -7,8 +7,8 @@ class FirebaseSongDAO(InterfaceSongDAO):
     
     def get_songs(self):
         try:
-#             #query = self.collection.stream() # (Firebase)
-            query = self.collection # (Local)
+            query = self.collection.stream() # (Firebase)
+            #query = self.collection # (Local)
             # Tal vez pueda ser necesario realizar un pre procesamiento del resultado de la consulta para devolver
             # una información al modelo homogénea
 #             print(query)

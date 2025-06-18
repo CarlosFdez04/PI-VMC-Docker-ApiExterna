@@ -10,14 +10,15 @@ class Model ():
         self.spotify = Spotify()
 
     def get_songs(self):
-        # return None
         mySongsDTO = SongsDTO()
         songs = self.daoSong.get_songs()
+
         for s in songs:
-            song_data = s # (Local)
+            #song_data = s # (Local)
            # Crear un objeto SongDTO con los datos de la canción
+            song_data = s.to_dict()
             song_dto = SongDTO()
-           # song_dto.id = doc.id  # (Firestore)
+            song_dto.id = s.id  # (Firestore)
             song_dto.title = song_data.get("id", "") # (Local)
             song_dto.title = song_data.get("title", "")
             song_dto.author = song_data.get("author", "")
