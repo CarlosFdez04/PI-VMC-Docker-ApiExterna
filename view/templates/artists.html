@@ -1,0 +1,28 @@
+<!--Código Examen-->
+{% extends "base.html" %}
+
+{% block title %}Dasboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Dashboard</h1>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h2>Lista de Artistas</h2>
+            {% if artists %}
+            <ul class="list-group">
+                {% for artist in artists %}
+                    <li class="list-group-item">
+                        <strong>{{ artist.name }}</strong> - {{ artist.song_number }}
+                    </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No hay artistas disponibles</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
