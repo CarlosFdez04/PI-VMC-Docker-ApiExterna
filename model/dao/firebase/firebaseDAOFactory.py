@@ -1,5 +1,6 @@
 from ...factory.daoFactoryInterface import InterfaceDAOFactory
 from .collection.firebaseDAOSong import FirebaseSongDAO
+from .collection.firebaseDAOArtist import FirebaseArtistDAO
 from firebase_admin import credentials, firestore, initialize_app, auth
 
 class FirebaseDAOFactory(InterfaceDAOFactory):
@@ -26,3 +27,8 @@ class FirebaseDAOFactory(InterfaceDAOFactory):
        collection = self.db.collection("songs") #(Firebase)
        return FirebaseSongDAO(collection)
        #collection = self.db["songs"] # (Local)
+
+    # Código Examen
+    def getArtistDao(self):
+       collection = self.db.collection("artists") #(Firebase)
+       return FirebaseArtistDAO(collection)

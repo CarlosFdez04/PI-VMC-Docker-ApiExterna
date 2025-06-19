@@ -12,3 +12,16 @@ class View():
     def get_songs_view(self, request: Request, songs):
         songs_list = json.loads(songs)
         return templates.TemplateResponse("songs.html", {"request" :request, "songs" : songs_list})
+
+    # Código Exámen
+    def get_latest_songs_view(self, request: Request, songs):
+        songs_list = json.loads(songs)
+        return templates.TemplateResponse("latest_songs.html", {"request": request, "songs": songs_list})
+
+    # Código Examen
+    def get_artists_view(self, request: Request, artists):
+            artists_list = json.loads(artists)
+            print("ARTISTS JSON (raw):", artists)
+            print("ARTISTS LIST (parsed):", artists_list)
+            return templates.TemplateResponse("artists.html", {"request" :request, "artists" : artists_list})
+

@@ -21,3 +21,12 @@ class FirebaseSongDAO(InterfaceSongDAO):
         # Como estamos heredando de la interfaz DAO Song, debemos de tener implementados los métodos 
         # que se han definido
         pass
+
+#Código Examen
+    def get_latest_songs(self, limit=10):
+        try:
+            query = self.collection.order_by("release", direction="DESCENDING").limit(limit).stream()
+            return query
+        except Exception as e:
+            print("Error al obtener las canciones más recientes:", e)
+            return []

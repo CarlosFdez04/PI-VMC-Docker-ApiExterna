@@ -50,4 +50,9 @@ class Spotify(InterfaceSongDAO):
         # Como estamos heredando de la interfaz DAO Song, debemos de tener implementados los métodos 
         # que se han definido
         pass
+
+    #Código Exámen
+    def get_latest_songs(self, limit=10):
+        raise NotImplementedError("Spotify no implementa este método")
+
         

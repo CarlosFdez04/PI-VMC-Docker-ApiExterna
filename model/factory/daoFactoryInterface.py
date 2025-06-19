@@ -15,3 +15,10 @@ class InterfaceDAOFactory(ABC):
     @abstractmethod
     def getSongDao(self):
         pass
+
+#Código Extra
+"""
+    @abstractmethod
+    def getArtistDao(self):
+        pass
+"""

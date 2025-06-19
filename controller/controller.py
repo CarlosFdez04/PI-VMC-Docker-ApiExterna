@@ -27,3 +27,16 @@ def search_songs_by_artist(request: Request, artist: str):
     print(artist)
     songs =  model.get_songs_by_artist(artist) # Obtendremos el DTO
     return view.get_songs_view(request, songs)
+
+# Código Exámen
+@app.get("/latest-songs", description="Listado de las 10 canciones más recientes")
+def latest_songs(request: Request):
+    songs = model.get_latest_songs()
+    return view.get_latest_songs_view(request, songs)
+
+
+# Código Examen
+@app.get("/getartists", description="Hola esto es una descripcion")
+def getartists(request: Request):
+    artists = model.get_artists() # JSON
+    return view.get_artists_view(request,artists)
